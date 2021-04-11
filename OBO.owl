@@ -1,0 +1,868 @@
+@prefix : <http://www.semanticweb.org/eleana/ontologies/2020/6/OBO> .
+@prefix obo: <http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/eleana/ontologies/2020/6/OBO> .
+
+<http://www.semanticweb.org/eleana/ontologies/2020/6/OBO> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#bottomOf
+obo:bottomOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf obo:physicalRelation ;
+             owl:inverseOf obo:topOf ;
+             rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+             rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+             rdfs:comment "The relationship between two objects that describes the condition where an object is placed below and adjacent to the bottom side of another object." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#intersects
+obo:intersects rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf obo:physicalRelation ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Column> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#ComponentAssembly> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall> ;
+               rdfs:range obo:Staircase ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Column> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#ComponentAssembly> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall> ;
+               rdfs:comment "The relationship the describes when two objects meet in which only one of the two objects is at its termination, while the other one is intersected." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#isAdjacent
+obo:isAdjacent rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#abstractRelation> ;
+               rdfs:domain obo:Boundary ,
+                           obo:Surface ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interface> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+               rdfs:range obo:Boundary ,
+                          obo:Surface ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interface> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                          <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+               rdfs:comment "A topological relationship between two objects (e.g., material layers, zones) that share a common border or boundary, but do not intersect." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#isPhysicallyAdjacent
+obo:isPhysicallyAdjacent rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obo:physicalRelation ;
+                         rdf:type owl:SymmetricProperty ;
+                         rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ,
+                                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                         rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                                    <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ,
+                                    <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                         rdfs:comment "The relationship the describes when two objects are adjacent by sharing a common element." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#joinedTo
+obo:joinedTo rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf obo:physicalRelation ;
+             rdf:type owl:SymmetricProperty ;
+             rdfs:domain obo:Landing ,
+                         obo:Staircase ,
+                         obo:Step ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Column> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#ComponentAssembly> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Panel> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ,
+                         <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall> ;
+             rdfs:range obo:Landing ,
+                        obo:Staircase ,
+                        obo:Step ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Column> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#ComponentAssembly> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Panel> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ,
+                        <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall> ;
+             rdfs:comment "The relationship between any two objects where the objects are meeting at their respective terminations." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#physicalRelation
+obo:physicalRelation rdf:type owl:ObjectProperty ;
+                     rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                                 <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ,
+                                 <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                     rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ,
+                                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                     rdfs:comment "A relationship that describes the ways in which objects physicaly relate with one another, either by proximity (adjacency), intersection, geometric union (join) and arrangement in elevation (an element is on top/bottom of another element)." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#topOf
+obo:topOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf obo:physicalRelation ;
+          rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                      <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+          rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+          rdfs:comment "The relationship between two objects that describes the condition where an object is placed below and adjacent to the top side of another object." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#abstractRelation
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#abstractRelation> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Material> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Project> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                                           rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ,
+                                                                                                      <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection> ,
+                                                                                                      <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                                      <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Material> ,
+                                                                                                      <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Project> ,
+                                                                                                      <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                                      <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                                           owl:propertyDisjointWith <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialRelation> ;
+                                                                                           rdfs:comment "An abstract relation is any relationship between any two or more elements that describesrelationship with no physical characteristics that if violated both objects could continue to exist independent of one an another." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#boundedBy
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#boundedBy> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#abstractRelation> ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ,
+                                                                                                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Door> ,
+                                                                                                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interior> ,
+                                                                                                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ,
+                                                                                                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Window> ;
+                                                                                    rdfs:range obo:Boundary ,
+                                                                                               obo:Surface ,
+                                                                                               <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> ,
+                                                                                               <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Envelope> ,
+                                                                                               <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                                                                                               <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Opening> ,
+                                                                                               <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ,
+                                                                                               <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                               <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ,
+                                                                                               <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall> ;
+                                                                                    rdfs:comment "The abstract  relationship between a model object and the entity bounded by it." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#abstractRelation> ;
+                                                                              rdfs:comment "An abstract  relationship between two objects in which the subject can be said to be closely associated with, contain, or can be said to be comprised of another entity." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasBuilding
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasBuilding> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has> ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ;
+                                                                                      rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ;
+                                                                                      rdfs:comment "The abstract relationship in which the subject contains a building entity." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasElement
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasElement> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has> ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Envelope> ;
+                                                                                     rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ;
+                                                                                     rdfs:comment "The abstract relationship in which a subject can be said to be composed of an element." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasEnvelope
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasEnvelope> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has> ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ;
+                                                                                      rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Envelope> ;
+                                                                                      rdfs:comment "The abstract relationship in which a subject can be said to have (directly possses) an envelope." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasEnvironment
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasEnvironment> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has> ;
+                                                                                         rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Project> ;
+                                                                                         rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Context> ;
+                                                                                         rdfs:comment "The abstract relationship in which a subject can be said to be contained by an environment." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasGeometry
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasGeometry> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has> ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ;
+                                                                                      rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ,
+                                                                                                 <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                                      rdfs:comment "The abstract  relationship between a model object and its representational geometry." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasInterior
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasInterior> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has> ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ;
+                                                                                      rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interior> ;
+                                                                                      rdfs:comment "The abstract  relationship in which a subject can be said to have (directly possses) an interior." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasPart
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasPart> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#abstractRelation> ;
+                                                                                  owl:inverseOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#isPartOf> ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                             <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                                  rdfs:comment "An abstract relationship between two objects that descibe a part-whole relationship." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasSite
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasSite> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has> ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Project> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ;
+                                                                                  rdfs:comment "The abstract  relationship in which a subject can be said to be contained within a site description." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#isPartOf
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#isPartOf> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#abstractRelation> ;
+                                                                                   rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection> ;
+                                                                                   rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                              <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOf
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOf> rdf:type owl:ObjectProperty ;
+                                                                                 rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialRelation> ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ;
+                                                                                 rdfs:comment "A material relationship in which, from a construction standpoint, the subject is composed of another entity." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOfFraming
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOfFraming> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOf> ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> ;
+                                                                                        rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ,
+                                                                                                   <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Panel> ;
+                                                                                        owl:propertyDisjointWith <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOfUnitElement> ;
+                                                                                        rdfs:comment "A material relationship in which, from a construction standpoint, the subject is composed of framing or framing members." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOfUnitElement
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOfUnitElement> rdf:type owl:ObjectProperty ;
+                                                                                            rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#madeOf> ;
+                                                                                            rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ;
+                                                                                            rdfs:range obo:Landing ,
+                                                                                                       obo:Step ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Door> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Panel> ,
+                                                                                                       <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Window> ;
+                                                                                            rdfs:comment "A material relationship in which, from a construction standpoint, the subject is composed of a unitElement entity." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialRelation
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialRelation> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ;
+                                                                                           rdfs:range <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                                           rdfs:comment "A material relationship describes any relationship between any two or more elements that if broken or absent would compromize the integrity of the overall represented structutre (i.e. if a curtain wall is missing mullion, the curtain wall is incomplete). It describes physical relationships between building construction systems." .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#area
+obo:area rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf obo:metric ;
+         rdfs:domain obo:Boundary ,
+                     obo:Landing ,
+                     obo:Step ,
+                     obo:Surface ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Door> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interface> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Opening> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Panel> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall> ,
+                     <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Window> ;
+         rdfs:range xsd:double ;
+         rdfs:comment "Data property that relates to a way of measuring the area of an object." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#metric
+obo:metric rdf:type owl:DatatypeProperty ;
+           rdfs:comment "Data property that relates to a way of measuring an object." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#surfaceArea
+obo:surfaceArea rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf obo:metric ;
+                rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Envelope> ;
+                rdfs:range xsd:double ;
+                rdfs:comment "Data property that relates to a way of measuring the surface area of an element." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#volume
+obo:volume rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf obo:metric ;
+           rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+           rdfs:range xsd:double ;
+           rdfs:comment "Data property that relates to a way of measuring the volume of an object." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#coordinates
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#coordinates> rdf:type owl:DatatypeProperty ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                                  <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                                  <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                                      rdfs:range xsd:double ;
+                                                                                      rdfs:comment "Data property of type list of type double that describes the numbers used in a coordinate system to uniquely determine the position of the points or other geometric elements on a manifold such as Euclidean space." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#datum
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#datum> rdf:type owl:DatatypeProperty ;
+                                                                                rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#level> ;
+                                                                                rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainRoof> ,
+                                                                                            <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                                                                                            <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ;
+                                                                                rdfs:range xsd:double ;
+                                                                                owl:propertyDisjointWith <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#enumeration> ;
+                                                                                rdfs:comment "Data property of type double that defines the datum value of a level elevation." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#dimension
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#dimension> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                                    rdfs:range xsd:double ;
+                                                                                    rdfs:comment "Data property that describes the measurable extent of some kind, such as length, width, or height of an element." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#enumeration
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#enumeration> rdf:type owl:DatatypeProperty ;
+                                                                                      rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#level> ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainRoof> ,
+                                                                                                  <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                                                                                                  <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ;
+                                                                                      rdfs:range xsd:integer ;
+                                                                                      rdfs:comment "Data property of type integer that defines the index number of a level." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#height
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#height> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#dimension> ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                             <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                             <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                                 rdfs:range xsd:double ;
+                                                                                 rdfs:comment "Data property of type double that describes the measurable extent of the height of an element." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#isStructural
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#isStructural> rdf:type owl:DatatypeProperty ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Column> ,
+                                                                                                   <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component> ,
+                                                                                                   <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                                                                                                   <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ,
+                                                                                                   <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall> ;
+                                                                                       rdfs:range xsd:boolean ;
+                                                                                       rdfs:comment "Data property of type boolean that defines whether element is structural." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#length
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#length> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#dimension> ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                             <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                             <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                                 rdfs:range xsd:double ;
+                                                                                 rdfs:comment "Data property of type double that describes the measurable extent of the length of an element." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#level
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#level> rdf:type owl:DatatypeProperty ;
+                                                                                rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainRoof> ,
+                                                                                            <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> ,
+                                                                                            <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> ;
+                                                                                rdfs:range xsd:string ;
+                                                                                rdfs:comment "Data property that defines the level one or more elements are referenced to." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialCategory
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialCategory> rdf:type owl:DatatypeProperty ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Material> ;
+                                                                                           rdfs:range xsd:string ;
+                                                                                           rdfs:comment "Data property of type string that describes the broader classification category that a material type belongs in." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialType
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialType> rdf:type owl:DatatypeProperty ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Material> ;
+                                                                                       rdfs:range xsd:string ;
+                                                                                       rdfs:comment "Data property of type string that describes the type for any material." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#name
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#name> rdf:type owl:DatatypeProperty ;
+                                                                               rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> ,
+                                                                                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Envelope> ,
+                                                                                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interior> ,
+                                                                                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Material> ,
+                                                                                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Project> ,
+                                                                                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                           <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                               rdfs:range xsd:string ;
+                                                                               rdfs:comment "Data property of type string that describes the name for any entity." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#width
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#width> rdf:type owl:DatatypeProperty ;
+                                                                                rdfs:subPropertyOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#dimension> ;
+                                                                                rdfs:domain <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ,
+                                                                                            <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> ,
+                                                                                            <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                                rdfs:range xsd:double ;
+                                                                                rdfs:comment "Data property of type double that describes the measurable extent of the width of an element." .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#Boundary
+obo:Boundary rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement> ;
+             rdfs:comment "An abstract element that represents a 2 dimentional boundary representation that contains the entire area of a builidng, room, space, zone, floor, roof, wall and opening types (window, door, opening)." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#Landing
+obo:Landing rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#Railing
+obo:Railing rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#Staircase
+obo:Staircase rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#Step
+obo:Step rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#Surface
+obo:Surface rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement> ;
+            rdfs:comment "An abstract element that represents a conceptual surface that represents an otherwise three-dimensional objects as a 2D plane." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/OBO#Zone
+obo:Zone rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+         owl:disjointWith <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Room> ;
+         rdfs:comment "Base class for a geometric representation of a HVAC zone." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ;
+                                                                                          rdfs:comment "An element of non-material substance." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Annotation
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Annotation> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ;
+                                                                                          rdfs:comment "An element that represents collection of physical / material that can only be described as collections of other unit elements assembled in a specific ordered method where the relationship between elements within the assembly are substinative." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building> rdf:type owl:Class ;
+                                                                                   rdfs:comment "An independent unit of the built environment with a characteristic spatial structure, intended to serve at least one function or user activity [ISO-12006]." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection> rdf:type owl:Class ;
+                                                                                     rdfs:comment "A class that indicates a collection of elements of any type that are in a Building." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Column
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Column> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                                 rdfs:comment "A unit element that represent a pillar like, rectalinear element that may or may not have structural properties and provides upright support in architectural structures." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                                    rdfs:comment "A unit element that is a constituent part of a larger whole and may be custom." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#ComponentAssembly
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#ComponentAssembly> rdf:type owl:Class ;
+                                                                                            rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ;
+                                                                                            rdfs:comment "An assembly element that represents a component that is part of an Assembly made of unit elements, but it does not belong to a curtain system." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Context
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Context> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement> ;
+                                                                                  rdfs:comment "An abstract element that represents the context of a project." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainRoof
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainRoof> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> ;
+                                                                                      rdfs:comment "A curtain system element that is of type roof." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement> ;
+                                                                                        rdfs:comment "An assembly element that represents a curtain system comprized of panels and framing." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainWall
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainWall> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem> ;
+                                                                                      rdfs:comment "A curtain system element that is of type wall." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Datum
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Datum> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Point> ;
+                                                                                rdfs:comment "A fixed starting point of a scale or operation." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Dimension
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Dimension> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Annotation> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Door
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Door> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                               rdfs:comment "A unit element that represents a hinged, sliding, or revolving or otherwise mobile partion or barrier at the threshold of building, room or space." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> rdf:type owl:Class ;
+                                                                                  rdfs:comment "An entity that cannot be further subcategorized." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Envelope
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Envelope> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection> ;
+                                                                                   owl:disjointWith <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interior> ;
+                                                                                   rdfs:comment "The collection of elements that represent the geometric and material conditions that describe the contact surface between exterior envirionment and interior space." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                                rdfs:comment "A unit element that represents the lower surface (horizontal partion) of a room or space." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                                rdfs:comment "A unit element that represents horizontal and vertical structual or non-structural elements in which other elements may be placed." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Grid
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Grid> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Annotation> ;
+                                                                               rdfs:comment "An abstract element that represents the conceptual grid of a project." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interface
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interface> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement> ;
+                                                                                    rdfs:comment "An abstract element that represents the conceptual boundary between one two or more elements." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interior
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interior> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection> ;
+                                                                                   rdfs:comment "The collection of elements that are not part of a building's envelope nor part of the environment and represent the internal material conditions and subdivision schema." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Level
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Level> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Annotation> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Location
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Location> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement> ;
+                                                                                   rdfs:comment "A description of specific points in space." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Material
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Material> rdf:type owl:Class ;
+                                                                                   rdfs:comment "A class that describes the matter from which an element is made of." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Mullion
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Mullion> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ;
+                                                                                  owl:disjointWith <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Transom> ;
+                                                                                  rdfs:comment "A unit element that represents vertical structural or non-structual member on to which other elements may be attached within a curtain system." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Opening
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Opening> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement> ;
+                                                                                  rdfs:comment "An abstract element that represnts a void, break, or missing piece of an otherwise continuous solid volume." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Panel
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Panel> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                                rdfs:comment "A unit element that represents a single unitized member within a curtain system." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Point
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Point> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Location> ;
+                                                                                rdfs:comment "A set of XYZ coordinates." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Project
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Project> rdf:type owl:Class ;
+                                                                                  rdfs:comment "An individual or collaborative enterprise that is planned and designed to achieve a particular aim." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                               rdfs:comment "An element that represents the upper most non-vertical partition of the envelope." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Room
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Room> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> ;
+                                                                               rdfs:comment "Base class for a geometric representation of a room." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site> rdf:type owl:Class ;
+                                                                               rdfs:comment "The collection of location and descriptive data that uniquely identify a specific construction effort." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space> rdf:type owl:Class ;
+                                                                                rdfs:comment "A part of the physical world or a virtual world whose 3D spatial extent is bounded actually or theoretically, and provides for certain functions within the bounds of the area in which it is contained in." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Symbol
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Symbol> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Annotation> .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Transom
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Transom> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame> ;
+                                                                                  rdfs:comment "A unit element that represents horizontal structural or non-structual member on to which other elements may be attached within a curtain system." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element> ;
+                                                                                      rdfs:comment "A material / physical construction element that comprises an envelope system that cannot be further decomposed into other elements at a given level of detail." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                               rdfs:comment "An element that represents a vertical or near vertical partion between rooms, spaces or the exeterior envirionment." .
+
+
+###  http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Window
+<http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Window> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement> ;
+                                                                                 rdfs:comment "A unit element that represents an opening in the wall or roof of a building that is fitted with glass or other transparent material in a frame to admit light or air and allow occupantsto see out." .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( obo:Boundary
+                obo:Surface
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Annotation>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Context>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interface>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Location>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Opening>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( obo:Landing
+                obo:Step
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Column>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Component>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Door>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Floor>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Frame>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Panel>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Roof>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Wall>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Window>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( obo:Railing
+                obo:Staircase
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#ComponentAssembly>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#CurtainSystem>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( obo:Surface
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Annotation>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Context>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Interface>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Location>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Opening>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AbstractElement>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#AssemblyElement>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#UnitElement>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Building>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Collection>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Element>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Material>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Project>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Site>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#Space>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( obo:bottomOf
+                obo:intersects
+                obo:isPhysicallyAdjacent
+                obo:joinedTo
+                obo:topOf
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( obo:isAdjacent
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#boundedBy>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#has>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasPart>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#isPartOf>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( obo:physicalRelation
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#abstractRelation>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialRelation>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasBuilding>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasElement>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasEnvelope>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasEnvironment>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasGeometry>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasInterior>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#hasSite>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( obo:area
+                obo:surfaceArea
+                obo:volume
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( obo:metric
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#coordinates>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#dimension>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#isStructural>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#level>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialCategory>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialType>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#name>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#coordinates>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#dimension>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#isStructural>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#level>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialCategory>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#materialType>
+                <http://www.semanticweb.org/eleana/ontologies/2020/6/untitled-ontology-5#name>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
